@@ -28,9 +28,10 @@ Push local git repository to Heroku remote repository:
 git add .
 git commit -m "Initialize Project"
 git push heroku master 
-
 ```
 See website deployment effect:
 ```
 heroku open
 ```
+Some demo instructions:
+This demo can only make good rating predictions for English comment. The prediction results are generated between 1-5, with 5 being the full rating. This system has a low prediction accuracy for single word comments. The more sentence words, the higher the prediction accuracy.
