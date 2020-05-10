@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <title>Predictor of comments</title>
+    <style>
+        #jz{ margin:0 auto; width:40%; height:100%; border-bottom:1px solid #0000FF;text-align:center}
+        #jz1{ margin:0 auto; width:40.5%; height:100%; border:0px solid #0000FF;}
+        #p1{font-size: 10px}
+        #sub{width:30%; height:20%;}
+        #form{margin:0 auto;border:1px solid #0000FF;width:80%}
+        #div{margin-bottom: 8%;}
+        #div1{margin-bottom: 8%;border-bottom:1px solid #0000FF;}
+        #input{width:65%;}
+    </style>
+    <script type="text/javascript">
+        function isNullWithText(text){
+            var reg = /[\s|*|+|\-|`|{|}|~|_|,|;|.|/|\[|\]|;|\!|?|\'|\\|\)|\(|\"|@|&|#|-|=|*|%|>|<|^|-|A-Za-z0-9]\s*/;
+            if(text.length==0 | text==" " | text == ""){
+                alert("This text box cannot be empty!");
+                return false;
+            }
+            else if(!reg.test(text)){
+                alert("The system detects illegal characters and the result will be deviated. Please enter the legal number, English letters and symbols next time.")
+            }
+            else{
+                this.document.forms[0].submit();
+
+            }
+        }
+    </script>
+	<body>
+        <div id="jz">
+            <div id="div1">
+                <h2>Comments Rating Predictor</h2>
+                <h2>Based On Naive Bayes</h2>
+            </div>
+            <div id="form">
+                <form action = "/predicted" method="post">
+                    <h4>Enter Comment:</h4>
+			        <h4><input id="input" type="text" name="sentence" value="{{ sentence }}"/></h4>
+			        <h4><input id="sub" type="button" value="prediction" onclick="isNullWithText(sentence.value)"/></h4>
+		        </form>
+                <h4>The predicted rating : {{ rating }} points/5pts</h4>
+                <h6>Others rating probability(Relative probability): </h6>
+                <h6>{{ probability }}</h6>
+            </div>
+            <div id="div">
+            </div>
+        </div>
+        <div id="jz1">
+            <p id="p1">README:This system can only make good rating predictions for English comment. The prediction results are generated between 1-5, with 5 being the full rating. This system has a low prediction accuracy for single word comments. The more sentence words, the higher the prediction accuracy.</p>
+        </div>
+	</body>
+</html>
