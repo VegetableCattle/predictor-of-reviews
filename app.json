@@ -1,6 +1,6 @@
 {
-  "name": "Flask sample on Heroku",
-  "description": "An example of deploying Flask web app to Heroku.",
+  "name": "Flask on Heroku",
+  "description": "A deploying Flask web app to Heroku.",
   "image": "heroku/python",
   "repository": "https://git.heroku.com/flask-rating-prediction",
   "keywords": ["python", "flask" ]
