@@ -18,10 +18,10 @@
                 alert("This text box cannot be empty!");
                 return false;
             }
-            else if(!reg.test(text)){
-                alert("The system detects illegal characters and the result will be deviated. Please enter the legal number, English letters and symbols next time.")
-            }
             else{
+		if(!reg.test(text)){
+                alert("The system detects illegal characters and the result will be deviated. Please enter the legal number, English letters and symbols next time.")
+            	}
                 this.document.forms[0].submit();
 
             }
